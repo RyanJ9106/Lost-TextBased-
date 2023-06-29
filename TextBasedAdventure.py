@@ -1,3 +1,6 @@
+import time
+import sys
+
 print("Hello and Welcome to Lost")
 input("Press enter to Wake Up: ")
 
@@ -166,6 +169,41 @@ def room2f():
 #########################################################################################################################################################
 
 def room3():
-    print("\nThis is room 3")
+    space = input("\nYou walk into this room, the ceiling has caved in, and the door locks behind you. You cant leave. You realise the other side of the ceiling is the same as the crack in the wall, you realise you are in a room in space.\nThere are two doors one with darkness behing it (1) and other with a red light (2). (1 or 2): ")
 
-room0s()
+    if space == "1":
+        doorlight = input("\nYou shine your light onto the door and realise there are engravings of planets and theories of space all over it. You slowly open the door and the door gets ripped off of its hinges flying out of the room into the endless void, you grab onto the door frame trying to latch on to survive. Your grip slips and you fly out of door. Floating in space forever... (Press R to restart): ")
+
+        if doorlight == "R":
+            room0()
+
+    if space == "2":
+        twodoor = input("\nYou approach the door with the red light shining out of it, you realise there are no door handles on the door. You kick the door open and see a computer screen with a red light emmiting from it. (Press 1): ")
+
+        if twodoor == "1":
+            computer()
+
+def computer():
+    passscreen = input("\nYou read the note on the desk it says 'Password: 52852'. Enter the password into the computer: ")
+    text = "YOU ARE TRAPPED, FLOATING IN SPACE"
+    dot = "................................"
+
+    if passscreen == "52852":
+        input("\nThe computer screen has single file in the middle of the screen. (Press Enter to open the file): ")
+
+    for char in text:
+        print(char, end='')
+        sys.stdout.flush()
+        time.sleep(.25)
+    
+    for char in dot:
+        print(char, end='')
+        sys.stdout.flush()
+        time.sleep(.5)
+
+    time.sleep(10)
+    print("\nThank you for playing lost, hope you enjoyed this short experince.")
+
+#########################################################################################################################################################
+    
+computer()
